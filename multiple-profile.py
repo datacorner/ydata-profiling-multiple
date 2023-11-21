@@ -11,7 +11,7 @@ import pathlib
 import shutil
 import json
 
-COMPLETEPROF_TEMPLATEDIR = "./complete/"
+COMPLETEPROF_TEMPLATEDIR = "./templates/"
 SIMPLEPROF_TEMPLATEDIR = "./simple/"
 COMPLETE_MENU = "menu.html"
 COMPLETE_INDEX = "index.html"
