@@ -1,0 +1,41 @@
+<html>
+    <head>	
+		<LINK rel="stylesheet" type="text/css" href="bootstrap.css">
+        <style>
+            /* Ajoutez une classe de marge à la page entière */
+            body {
+                margin: 20px; /* Exemple de marge de 20 pixels sur tous les côtés de la page */
+            }
+        </style>
+    </head>
+    <body>
+        <H1>Profiling summary</H1>
+            {% for l in links -%}
+            <H2>File:&nbsp;<A href="{{ l.link }}">{{ l.name }}</A></H2>
+            <TABLE class="table .table-sm table-striped table-bordered">
+                <thead>
+                    <TR>
+                        <TH>Column Name</TH>
+                        <TH>Distinct Values</TH>
+                        <TH>Missing Values</TH>
+                        <TH>Type</TH>
+                        <TH>Is Unique</TH>
+                        <TH>Value Counts</TH>
+                    </TR>
+                </thead>
+                <tboby>
+                {% for col in l.columns -%}
+                <TR>
+                    <TD><B>{{ col.name }}</B></TD>
+                    <TD>{{ col.distinct }}</TD>
+                    <TD>{{ col.missing }}</TD>
+                    <TD>{{ col.type }}</TD>
+                    <TD>{{ col.is_unique }}</TD>
+                    <TD>{{ col.freqDistrib }}</TD>
+                </TR>
+                {% endfor %}
+            </tboby>
+            </TABLE>
+            {% endfor %}
+    </body>
+</html>

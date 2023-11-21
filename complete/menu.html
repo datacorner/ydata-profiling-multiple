@@ -1,0 +1,19 @@
+<html>
+    <head>	
+		<LINK rel="stylesheet" type="text/css" href="bootstrap.css">
+    </head>
+    <body>
+        <H2>Datasets Profiles</H2>
+        <ol class="list-group list-group-numbered">
+                <H4><A href="home.html" target=profile>Home</A></H4>
+                {% for l in links -%}
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+					<div class="ms-2 me-auto">
+					  <div class="fw-bold"><A href="{{ l.link }}" target=profile>{{ l.name }}</A></div>
+					</div>
+					<span class="badge bg-primary rounded-pill">{{ l.columnsCount }} cols</span>
+				  </li>
+                {% endfor %}
+            <ol>
+    </body>
+</html>

@@ -5,13 +5,26 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Current File",
+            "name": "Real POC",
             "type": "python",
             "request": "launch",
             "program": "multiple-profile.py",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "args":  [ "-dir", "C:/WORK/data-wk/AXA/DATA/POC"]
+            "args":  [ "-dir", "C:/WORK/data-wk/AXA/DATA/POC",
+                       "-sep", ";",
+                       "-dest", "C:/WORK/data-wk/AXA/DATA/POC/prof"]
+        },
+        {
+            "name": "TEST",
+            "type": "python",
+            "request": "launch",
+            "program": "multiple-profile.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args":  [ "-dir", "tests\\data",
+                       "-sep", ",",
+                       "-dest", "tests\\data\\output"]
         }
     ]
 }
