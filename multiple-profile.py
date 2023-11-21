@@ -21,6 +21,8 @@ BOOTSTRAP_JS = "bootstrap.bundle.min.js"
 EXT_CSV = ".CSV"
 
 class JinjaProfileItem:
+	""" This class contains all the information needed for generating the HTML (Home & Index rendering)
+	"""
 	def __init__(self, filename, columns, rowcount):
 		self.link = filename
 		self.name = os.path.splitext(filename)[0]
@@ -29,6 +31,8 @@ class JinjaProfileItem:
 		self.rowsCount = rowcount
 
 class SimpleColumnProfile:
+	""" This Class contains the brut profile data by column (per table)
+	"""
 	def __init__(self, name, distinct, missing, type, is_unique, freqDistrib):
 		self.name = name
 		self.distinct = distinct
@@ -38,6 +42,8 @@ class SimpleColumnProfile:
 		self.freqDistrib = freqDistrib
 
 class Options:
+	""" This Class contains the options gathered from the Command line
+	"""
 	def __init__(self, directory, delimiter, encoding, destination):
 		self.directory = directory
 		self.delimiter = delimiter
@@ -48,6 +54,10 @@ class Options:
 		return self.__destimation__ if len(self.__destimation__)>0 else self.directory
 
 def getCLIArguments():
+	""" Checks & Gather the command line parameters
+	Returns:
+		Options: options requested
+	"""
 	parser = argparse.ArgumentParser()
 	parser.add_argument("-dir", help="Folder where the files in CSV format are stored", required=True)
 	parser.add_argument("-sep", help="CSV column delimiter (comma by default)", required=False, default=",")
@@ -57,12 +67,25 @@ def getCLIArguments():
 	return 	Options(args["dir"], args["sep"], args["enc"], args["dest"]) 
 
 def getFreqDistribution(data):
+	""" Get the word_counts value size (which can not exist depending on the column type)
+	Args:
+		data (json): Column informations from the profile
+	Returns:
+		str: return the number of different values (categorical)
+	"""
 	try:
 		return len(data["word_counts"])
 	except:
 		return "N.A."
 
 def buildCompleteProfile(files, options):
+	""" Build the Profile of all the files in the folder
+	Args:
+		files (array): all the files to profile
+		options (options): CLI options
+	Returns:
+		array: profile data
+	"""
 	links = [] 
 	# Create the destination directory if not exists
 	if (not os.path.isdir(options.destination)):
@@ -100,6 +123,11 @@ def buildCompleteProfile(files, options):
 	return links
 
 def buildHTMLtructure(links, destinationFolder):
+	"""Create the HTML files accordingly by using JINJA2
+	Args:
+		links (array): profile data for all files
+		destinationFolder (str): destination folder for the html files
+	"""
 	# Create the menu.html page with the profiled datasets pages
 	templateContent = pathlib.Path(COMPLETEPROF_TEMPLATEDIR + COMPLETE_MENU).read_text()
 	j2_template = Template(templateContent)
