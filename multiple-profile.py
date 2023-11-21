@@ -112,7 +112,7 @@ def buildHTMLtructure(links, destinationFolder):
 
 	# Copy the index html files (basic copy)
 	shutil.copy(COMPLETEPROF_TEMPLATEDIR + "bootstrap.css", destinationFolder)
-	shutil.copy(COMPLETEPROF_TEMPLATEDIR + "bootstrap.js", destinationFolder)
+	shutil.copy(COMPLETEPROF_TEMPLATEDIR + "bootstrap.bundle.min.js", destinationFolder)
 	shutil.copy(COMPLETEPROF_TEMPLATEDIR + COMPLETE_INDEX, destinationFolder)
 
 if __name__ == "__main__":

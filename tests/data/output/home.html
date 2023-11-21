@@ -7,10 +7,36 @@
                 margin: 20px; /* Exemple de marge de 20 pixels sur tous les côtés de la page */
             }
         </style>
+        <script type="text/javascript" src="bootstrap.bundle.min.js"></script>
     </head>
     <body>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <a id="home" />Datasets
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#evt">evt</a></li>
+                <li><a class="dropdown-item" href="#test">test</a></li>
+                <li><a class="dropdown-item" href="#test1">test1</a></li>
+                
+            </ul>
+        </div>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#">Disabled</a>
+  </li>
+</ul>
         <H1>Profiling summary</H1>
-            <H2>File:&nbsp;<A href="evt.html">evt</A></H2>
+            <H2><a id="evt" />File:&nbsp;<A href="evt.html">evt</A></H2>
             <TABLE class="table .table-sm table-striped table-bordered">
                 <thead>
                     <TR>
@@ -42,7 +68,8 @@
                 
             </tboby>
             </TABLE>
-            <H2>File:&nbsp;<A href="test.html">test</A></H2>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="window.open('#home', '_self')">TOP</button>
+            <H2><a id="test" />File:&nbsp;<A href="test.html">test</A></H2>
             <TABLE class="table .table-sm table-striped table-bordered">
                 <thead>
                     <TR>
@@ -155,9 +182,9 @@
                     <TD><B>time:timestamp</B></TD>
                     <TD>4</TD>
                     <TD>0</TD>
-                    <TD>DateTime</TD>
+                    <TD>Categorical</TD>
                     <TD>False</TD>
-                    <TD>N.A.</TD>
+                    <TD>5</TD>
                 </TR>
                 <TR>
                     <TD><B>VIDEOEND</B></TD>
@@ -178,7 +205,8 @@
                 
             </tboby>
             </TABLE>
-            <H2>File:&nbsp;<A href="test1.html">test1</A></H2>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="window.open('#home', '_self')">TOP</button>
+            <H2><a id="test1" />File:&nbsp;<A href="test1.html">test1</A></H2>
             <TABLE class="table .table-sm table-striped table-bordered">
                 <thead>
                     <TR>
@@ -314,6 +342,7 @@
                 
             </tboby>
             </TABLE>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="window.open('#home', '_self')">TOP</button>
             
-    </body>
+
 </html>

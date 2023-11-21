@@ -7,11 +7,22 @@
                 margin: 20px; /* Exemple de marge de 20 pixels sur tous les côtés de la page */
             }
         </style>
+        <script type="text/javascript" src="bootstrap.bundle.min.js"></script>
     </head>
     <body>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <a id="home" />Datasets
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                {% for l in links -%}
+                <li><a class="dropdown-item" href="#{{ l.name }}">{{ l.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
         <H1>Profiling summary</H1>
             {% for l in links -%}
-            <H2>File:&nbsp;<A href="{{ l.link }}">{{ l.name }}</A></H2>
+            <H2><a id="{{ l.name }}" />File:&nbsp;<A href="{{ l.link }}">{{ l.name }}</A></H2>
             <TABLE class="table .table-sm table-striped table-bordered">
                 <thead>
                     <TR>
@@ -36,6 +47,7 @@
                 {% endfor %}
             </tboby>
             </TABLE>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="window.open('#home', '_self')">TOP</button>
             {% endfor %}
-    </body>
+
 </html>
