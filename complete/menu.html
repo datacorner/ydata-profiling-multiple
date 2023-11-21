@@ -12,7 +12,8 @@
 					  <div class="fw-bold"><A href="home.html#{{ l.name }}" target=profile>{{ l.name }}</A></div>
             <A href="{{ l.link }}" target=profile>Detailed profiling</A>
 					</div>
-					<span class="badge bg-primary rounded-pill">{{ l.columnsCount }} cols</span>
+					<span class="badge bg-primary rounded-pill">{{ l.columnsCount }} (C)</span>&nbsp;
+          <span class="badge bg-secondary rounded-pill">{{ l.rowsCount }} (R)</span>
 				  </li>
                 {% endfor %}
             <ol>

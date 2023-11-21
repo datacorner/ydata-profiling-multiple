@@ -21,11 +21,12 @@ BOOTSTRAP_JS = "bootstrap.bundle.min.js"
 EXT_CSV = ".CSV"
 
 class JinjaProfileItem:
-	def __init__(self, filename, columns):
+	def __init__(self, filename, columns, rowcount):
 		self.link = filename
 		self.name = os.path.splitext(filename)[0]
 		self.columns = columns
 		self.columnsCount = len(columns)
+		self.rowsCount = rowcount
 
 class SimpleColumnProfile:
 	def __init__(self, name, distinct, missing, type, is_unique, freqDistrib):
@@ -93,7 +94,7 @@ def buildCompleteProfile(files, options):
 								details[col]["is_unique"],
 								freqDistrib)
 				dsColumns.append(sProf)
-			links.append(JinjaProfileItem(rptName, dsColumns))
+			links.append(JinjaProfileItem(rptName, dsColumns, pdFile.shape[0]))
 			fullRptName = options.destination + "/" + rptName
 			profile.to_file(output_file=fullRptName)
 	return links
