@@ -16,6 +16,8 @@ SIMPLEPROF_TEMPLATEDIR = "./simple/"
 COMPLETE_MENU = "menu.html"
 COMPLETE_INDEX = "index.html"
 COMPLETE_HOME = "home.html"
+BOOTSTRAP_CSS = "bootstrap.css"
+BOOTSTRAP_JS = "bootstrap.bundle.min.js"
 EXT_CSV = ".CSV"
 
 class JinjaProfileItem:
@@ -109,10 +111,9 @@ def buildHTMLtructure(links, destinationFolder):
 	htmlContent = j2_template.render(links=links)
 	with open(destinationFolder + "/" + COMPLETE_HOME, "w") as fileIndex:
 		fileIndex.write(htmlContent)
-
 	# Copy the index html files (basic copy)
-	shutil.copy(COMPLETEPROF_TEMPLATEDIR + "bootstrap.css", destinationFolder)
-	shutil.copy(COMPLETEPROF_TEMPLATEDIR + "bootstrap.bundle.min.js", destinationFolder)
+	shutil.copy(COMPLETEPROF_TEMPLATEDIR + BOOTSTRAP_CSS, destinationFolder)
+	shutil.copy(COMPLETEPROF_TEMPLATEDIR + BOOTSTRAP_JS, destinationFolder)
 	shutil.copy(COMPLETEPROF_TEMPLATEDIR + COMPLETE_INDEX, destinationFolder)
 
 if __name__ == "__main__":
