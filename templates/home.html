@@ -1,6 +1,8 @@
-<html>
+<!doctype html>
+<html lang="en">
     <head>	
 		<LINK rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+		<link href="./css/bootstrap-table.min.css" rel="stylesheet">
         <style>
             /* Ajoutez une classe de marge à la page entière */
             body {
@@ -8,6 +10,8 @@
             }
         </style>
         <script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
+		<script src="./js/jquery.min.js"></script>
+		<script src="./js/bootstrap-table.min.js"></script>
     </head>
     <body>
         <div class="dropdown">
@@ -21,16 +25,20 @@
             </ul>
         </div><br>
             {% for l in profiles -%}
-            <H2><a id="{{ l.name }}" />File:&nbsp;<A href="{{ l.link }}">{{ l.name }}</A></H2>
-            <TABLE class="table .table-sm table-striped table-bordered">
+            <H2><a id="{{ l.name }}" /><A href="{{ l.link }}">{{ l.name }}</A></H2>
+            <TABLE data-toggle="table"
+                    data-search="true"
+                    data-search-highlight="true"
+                    data-show-columns="true" 
+                    data-height="460">
                 <thead>
                     <TR>
-                        <TH>Column Name</TH>
-                        <TH>Distinct Values</TH>
-                        <TH>Missing Values</TH>
-                        <TH>Type</TH>
-                        <TH>Is Unique</TH>
-                        <TH>Value Counts</TH>
+                        <TH data-sortable="true">Column Name</TH>
+                        <TH data-sortable="true">Distinct Values</TH>
+                        <TH data-sortable="true">Missing Values</TH>
+                        <TH data-sortable="true">Type</TH>
+                        <TH data-sortable="true">Is Unique</TH>
+                        <TH data-sortable="true">Value Counts</TH>
                     </TR>
                 </thead>
                 <tboby>
@@ -46,6 +54,7 @@
                 {% endfor %}
                 </tboby>
             </TABLE>
+            <br>
 			<div class="text-end">
                 <button type="button" class="btn btn-secondary btn-sm" onclick="window.open('#home', '_self')">TOP</button>
             </div>

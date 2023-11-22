@@ -1,4 +1,5 @@
-<html>
+<!doctype html>
+<html lang="en">
     <head>	
 		<LINK rel="stylesheet" type="text/css" href="./css/bootstrap.css">
       <style>
@@ -6,22 +7,44 @@
         body {
             margin: 20px; /* Exemple de marge de 20 pixels sur tous les côtés de la page */
         }
+        .marginrow { 
+            margin-top:15px; 
+        }
+        .borderrow { 
+              border-bottom: 1px solid #ccc;
+              padding: 15px;
+		    }
     </style>
     </head>
     <body>
-        <H2>Datasets Profiles</H2>
-        <ol class="list-group list-group-numbered">
-                <H4><A href="home.html" target=profile>Home</A></H4>
-                {% for l in profiles -%}
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-					<div class="ms-2 me-auto">
-					  <div class="fw-bold"><A href="home.html#{{ l.name }}" target=profile>{{ l.name }}</A></div>
-            <A href="{{ l.link }}" target=profile>Detailed profiling</A>
-					</div>
-					<span class="badge bg-primary rounded-pill">{{ l.columnsCount }} cols</span>&nbsp;
-          <span class="badge bg-secondary rounded-pill">{{ l.rowsCount }} rows</span>
-				  </li>
-                {% endfor %}
-            <ol>
+        <div class="row">
+          <div class="col fixed">
+            <img src="img/home_64px.png" />
+          </div>
+          <div class="col">
+            <H2>CSV files Profiling</H2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p align="left">From <b>{{ sourcefolder }}</b>
+          </div>
+        </div>
+
+        {% for l in profiles -%}
+        <div class="row marginrow borderrow">
+          <div class="col-1 my-auto">
+            <A href="{{ l.link }}" target=profile><img src="img/detailed.png" width="25px" /></a>
+          </div>
+          <div class="col-1 my-auto">
+            <A href="home.html#{{ l.name }}" target=profile><img src="img/notdetailed.png" width="25px" /></A>
+          </div>
+          <div class="col-7 my-auto">
+            <div class="fw-bold"><A href="home.html#{{ l.name }}" target=profile>{{ l.name }}</A></div>
+            <span class="badge bg-primary rounded-pill my-auto">{{ l.columnsCount }} cols</span>
+            <span class="badge bg-secondary rounded-pill my-auto">{{ l.rowsCount }} rows</span>
+          </div>
+        </div>
+        {% endfor %}
     </body>
 </html>

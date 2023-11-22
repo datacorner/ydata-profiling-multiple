@@ -1,4 +1,5 @@
-<html>
+<!doctype html>
+<html lang="en">
     <head>	
 		<LINK rel="stylesheet" type="text/css" href="./css/bootstrap.css">
       <style>
@@ -6,53 +7,95 @@
         body {
             margin: 20px; /* Exemple de marge de 20 pixels sur tous les côtés de la page */
         }
+        .marginrow { 
+            margin-top:15px; 
+        }
+        .borderrow { 
+              border-bottom: 1px solid #ccc;
+              padding: 15px;
+		    }
     </style>
     </head>
     <body>
-        <H2>Datasets Profiles</H2>
-        <ol class="list-group list-group-numbered">
-                <H4><A href="home.html" target=profile>Home</A></H4>
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-					<div class="ms-2 me-auto">
-					  <div class="fw-bold"><A href="home.html#Fournisseurs" target=profile>Fournisseurs</A></div>
-            <A href="Fournisseurs.html" target=profile>Detailed profiling</A>
-					</div>
-					<span class="badge bg-primary rounded-pill">2 cols</span>&nbsp;
-          <span class="badge bg-secondary rounded-pill">1909 rows</span>
-				  </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-					<div class="ms-2 me-auto">
-					  <div class="fw-bold"><A href="home.html#Quotas Ventes" target=profile>Quotas Ventes</A></div>
-            <A href="Quotas Ventes.html" target=profile>Detailed profiling</A>
-					</div>
-					<span class="badge bg-primary rounded-pill">4 cols</span>&nbsp;
-          <span class="badge bg-secondary rounded-pill">426 rows</span>
-				  </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-					<div class="ms-2 me-auto">
-					  <div class="fw-bold"><A href="home.html#RespGeo" target=profile>RespGeo</A></div>
-            <A href="RespGeo.html" target=profile>Detailed profiling</A>
-					</div>
-					<span class="badge bg-primary rounded-pill">2 cols</span>&nbsp;
-          <span class="badge bg-secondary rounded-pill">6 rows</span>
-				  </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-					<div class="ms-2 me-auto">
-					  <div class="fw-bold"><A href="home.html#Resultats Ventes" target=profile>Resultats Ventes</A></div>
-            <A href="Resultats Ventes.html" target=profile>Detailed profiling</A>
-					</div>
-					<span class="badge bg-primary rounded-pill">20 cols</span>&nbsp;
-          <span class="badge bg-secondary rounded-pill">10000 rows</span>
-				  </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-					<div class="ms-2 me-auto">
-					  <div class="fw-bold"><A href="home.html#Ventes (tout)" target=profile>Ventes (tout)</A></div>
-            <A href="Ventes (tout).html" target=profile>Detailed profiling</A>
-					</div>
-					<span class="badge bg-primary rounded-pill">22 cols</span>&nbsp;
-          <span class="badge bg-secondary rounded-pill">10000 rows</span>
-				  </li>
-                
-            <ol>
+        <div class="row">
+          <div class="col fixed">
+            <img src="img/home_64px.png" />
+          </div>
+          <div class="col">
+            <H2>CSV files Profiling</H2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p align="left">From <b>tests\data</b>
+          </div>
+        </div>
+
+        <div class="row marginrow borderrow">
+          <div class="col-1 my-auto">
+            <A href="Fournisseurs.html" target=profile><img src="img/detailed.png" width="25px" /></a>
+          </div>
+          <div class="col-1 my-auto">
+            <A href="home.html#Fournisseurs" target=profile><img src="img/notdetailed.png" width="25px" /></A>
+          </div>
+          <div class="col-7 my-auto">
+            <div class="fw-bold"><A href="home.html#Fournisseurs" target=profile>Fournisseurs</A></div>
+            <span class="badge bg-primary rounded-pill my-auto">2 cols</span>
+            <span class="badge bg-secondary rounded-pill my-auto">1909 rows</span>
+          </div>
+        </div>
+        <div class="row marginrow borderrow">
+          <div class="col-1 my-auto">
+            <A href="Quotas Ventes.html" target=profile><img src="img/detailed.png" width="25px" /></a>
+          </div>
+          <div class="col-1 my-auto">
+            <A href="home.html#Quotas Ventes" target=profile><img src="img/notdetailed.png" width="25px" /></A>
+          </div>
+          <div class="col-7 my-auto">
+            <div class="fw-bold"><A href="home.html#Quotas Ventes" target=profile>Quotas Ventes</A></div>
+            <span class="badge bg-primary rounded-pill my-auto">4 cols</span>
+            <span class="badge bg-secondary rounded-pill my-auto">426 rows</span>
+          </div>
+        </div>
+        <div class="row marginrow borderrow">
+          <div class="col-1 my-auto">
+            <A href="RespGeo.html" target=profile><img src="img/detailed.png" width="25px" /></a>
+          </div>
+          <div class="col-1 my-auto">
+            <A href="home.html#RespGeo" target=profile><img src="img/notdetailed.png" width="25px" /></A>
+          </div>
+          <div class="col-7 my-auto">
+            <div class="fw-bold"><A href="home.html#RespGeo" target=profile>RespGeo</A></div>
+            <span class="badge bg-primary rounded-pill my-auto">2 cols</span>
+            <span class="badge bg-secondary rounded-pill my-auto">6 rows</span>
+          </div>
+        </div>
+        <div class="row marginrow borderrow">
+          <div class="col-1 my-auto">
+            <A href="Resultats Ventes.html" target=profile><img src="img/detailed.png" width="25px" /></a>
+          </div>
+          <div class="col-1 my-auto">
+            <A href="home.html#Resultats Ventes" target=profile><img src="img/notdetailed.png" width="25px" /></A>
+          </div>
+          <div class="col-7 my-auto">
+            <div class="fw-bold"><A href="home.html#Resultats Ventes" target=profile>Resultats Ventes</A></div>
+            <span class="badge bg-primary rounded-pill my-auto">20 cols</span>
+            <span class="badge bg-secondary rounded-pill my-auto">10000 rows</span>
+          </div>
+        </div>
+        <div class="row marginrow borderrow">
+          <div class="col-1 my-auto">
+            <A href="Ventes (tout).html" target=profile><img src="img/detailed.png" width="25px" /></a>
+          </div>
+          <div class="col-1 my-auto">
+            <A href="home.html#Ventes (tout)" target=profile><img src="img/notdetailed.png" width="25px" /></A>
+          </div>
+          <div class="col-7 my-auto">
+            <div class="fw-bold"><A href="home.html#Ventes (tout)" target=profile>Ventes (tout)</A></div>
+            <span class="badge bg-primary rounded-pill my-auto">22 cols</span>
+            <span class="badge bg-secondary rounded-pill my-auto">10000 rows</span>
+          </div>
+        </div>
+        
     </body>
 </html>

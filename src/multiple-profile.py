@@ -22,6 +22,21 @@ BOOTSTRAP_JS = "bootstrap.bundle.min.js"
 EXT_CSV = ".CSV"
 FILES_TO_COPY_AS_IS = [ BOOTSTRAP_CSS, BOOTSTRAP_JS, COMPLETE_INDEX ]
 
+class Column:
+	def __init__(self):
+		self.name = ""
+		self.tables = []
+	def addTable(self, tableName):
+		self.tables.append(tableName)
+
+class Columns:
+	def __init__(self):
+		self.columns = []
+	def add(self, name, tables):
+		myCol = Column()
+		self.columns.append()
+
+
 class JinjaProfileItem:
 	""" This class contains all the information needed for generating the HTML (Home & Index rendering)
 	"""
@@ -88,10 +103,7 @@ def buildCompleteProfile(files, options):
 	Returns:
 		array: profile data
 	"""
-	profiles = [] 
-	# Create the destination directory if not exists
-	if (not os.path.isdir(options.destination)):
-		os.makedirs(options.destination)
+	profiles = []
 	# Profile the Datasets
 	for file in files:
 		filename, dotext = os.path.splitext(file)
@@ -124,33 +136,36 @@ def buildCompleteProfile(files, options):
 			profile.to_file(output_file=fullRptName)
 	return profiles
 
-def copyFromtemplate(destinationFolder, templateFile, profiles):
+def copyFromtemplate(options, templateFile, profiles):
 	# Create the home.html page with the profiling basics infos
 	templateContent = pathlib.Path(TEMPLATEDIR + templateFile).read_text()
 	j2_template = Template(templateContent)
-	htmlContent = j2_template.render(profiles=profiles)
-	with open(destinationFolder + "/" + templateFile, "w") as fileIndex:
+	htmlContent = j2_template.render(profiles=profiles, 
+								  	sourcefolder=options.directory)
+	with open(options.destination + "/" + templateFile, "w") as fileIndex:
 		fileIndex.write(htmlContent)
 
-def buildHTMLtructure(profiles, destinationFolder):
+def buildHTMLtructure(profiles, options):
 	"""Create the HTML files accordingly by using JINJA2
 	Args:
 		links (array): profile data for all files
-		destinationFolder (str): destination folder for the html files
+		options (Options): profile Options
 	"""
 	# Create the menu.html page with the profiled datasets pages
-	copyFromtemplate(destinationFolder, COMPLETE_MENU, profiles)
+	copyFromtemplate(options, COMPLETE_MENU, profiles)
 	# Create the home.html page with the profiling basics infos
-	copyFromtemplate(destinationFolder, COMPLETE_HOME, profiles)
-	#for file in FILES_TO_COPY_AS_IS:
-	#	shutil.copy(STATICDIR + file, destinationFolder)
+	copyFromtemplate(options, COMPLETE_HOME, profiles)
 
-def prepareHTML(destFolder):
+def prepareHTML(options):
 	""" Create the HTML structure. Copy the statics files / Create the html structure
 	Args:
 		destFolder (str): detination folder name
 	"""
 	try:
+		# Create the destination directory if not exists
+		#if (not os.path.isdir(options.destination)):
+		#	os.makedirs(options.destination)
+		# Copy the static files
 		shutil.copytree(STATICDIR, options.destination)
 	except:
 		pass
@@ -160,8 +175,8 @@ if __name__ == "__main__":
 	options = getCLIArguments()
 	# List all the fils in the source directory
 	files = os.listdir(options.directory)
-	prepareHTML(options.destination)
+	prepareHTML(options)
 	# Profile the Datasets
 	profiles = buildCompleteProfile(files, options)
 	# Create the menu.html page with the profiled datasets pages
-	buildHTMLtructure(profiles, options.destination)
+	buildHTMLtructure(profiles, options)
