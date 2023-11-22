@@ -1,13 +1,13 @@
 <html>
     <head>	
-		<LINK rel="stylesheet" type="text/css" href="bootstrap.css">
+		<LINK rel="stylesheet" type="text/css" href="./css/bootstrap.css">
         <style>
             /* Ajoutez une classe de marge Ã  la page entiÃ¨re */
             body {
                 margin: 20px; /* Exemple de marge de 20 pixels sur tous les cÃ´tÃ©s de la page */
             }
         </style>
-        <script type="text/javascript" src="bootstrap.bundle.min.js"></script>
+        <script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
     </head>
     <body>
         <div class="dropdown">
@@ -15,14 +15,15 @@
                 <a id="home" />Datasets
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#evt">evt</a></li>
-                <li><a class="dropdown-item" href="#test">test</a></li>
-                <li><a class="dropdown-item" href="#test1">test1</a></li>
+                <li><a class="dropdown-item" href="#Fournisseurs">Fournisseurs</a></li>
+                <li><a class="dropdown-item" href="#Quotas Ventes">Quotas Ventes</a></li>
+                <li><a class="dropdown-item" href="#RespGeo">RespGeo</a></li>
+                <li><a class="dropdown-item" href="#Resultats Ventes">Resultats Ventes</a></li>
+                <li><a class="dropdown-item" href="#Ventes (tout)">Ventes (tout)</a></li>
                 
             </ul>
-        </div>
-        <H1>Profiling summary</H1>
-            <H2><a id="evt" />File:&nbsp;<A href="evt.html">evt</A></H2>
+        </div><br>
+            <H2><a id="Fournisseurs" />File:&nbsp;<A href="Fournisseurs.html">Fournisseurs</A></H2>
             <TABLE class="table .table-sm table-striped table-bordered">
                 <thead>
                     <TR>
@@ -36,20 +37,20 @@
                 </thead>
                 <tboby>
                 <TR>
-                    <TD><B>col1</B></TD>
-                    <TD>9</TD>
+                    <TD><B>Fournisseur</B></TD>
+                    <TD>73</TD>
                     <TD>0</TD>
                     <TD>Text</TD>
-                    <TD>True</TD>
-                    <TD>17</TD>
+                    <TD>False</TD>
+                    <TD>72</TD>
                 </TR>
                 <TR>
-                    <TD><B>col2</B></TD>
-                    <TD>9</TD>
+                    <TD><B>ID produit</B></TD>
+                    <TD>1909</TD>
                     <TD>0</TD>
                     <TD>Text</TD>
                     <TD>True</TD>
-                    <TD>17</TD>
+                    <TD>1909</TD>
                 </TR>
                 
                 </tboby>
@@ -57,7 +58,7 @@
 			<div class="text-end">
                 <button type="button" class="btn btn-secondary btn-sm" onclick="window.open('#home', '_self')">TOP</button>
             </div>
-            <H2><a id="test" />File:&nbsp;<A href="test.html">test</A></H2>
+            <H2><a id="Quotas Ventes" />File:&nbsp;<A href="Quotas Ventes.html">Quotas Ventes</A></H2>
             <TABLE class="table .table-sm table-striped table-bordered">
                 <thead>
                     <TR>
@@ -71,124 +72,250 @@
                 </thead>
                 <tboby>
                 <TR>
-                    <TD><B>ACTIVITY</B></TD>
+                    <TD><B>Catégorie</B></TD>
+                    <TD>3</TD>
+                    <TD>0</TD>
+                    <TD>Categorical</TD>
+                    <TD>False</TD>
                     <TD>6</TD>
-                    <TD>0</TD>
-                    <TD>Text</TD>
-                    <TD>False</TD>
-                    <TD>13</TD>
                 </TR>
                 <TR>
-                    <TD><B>case:concept:name</B></TD>
-                    <TD>1</TD>
-                    <TD>0</TD>
-                    <TD>Categorical</TD>
-                    <TD>False</TD>
-                    <TD>1</TD>
-                </TR>
-                <TR>
-                    <TD><B>case:creator</B></TD>
-                    <TD>1</TD>
-                    <TD>0</TD>
-                    <TD>Categorical</TD>
-                    <TD>False</TD>
-                    <TD>2</TD>
-                </TR>
-                <TR>
-                    <TD><B>case:variant</B></TD>
-                    <TD>1</TD>
-                    <TD>0</TD>
-                    <TD>Categorical</TD>
-                    <TD>False</TD>
-                    <TD>2</TD>
-                </TR>
-                <TR>
-                    <TD><B>case:variant-index</B></TD>
-                    <TD>1</TD>
-                    <TD>0</TD>
-                    <TD>Categorical</TD>
-                    <TD>False</TD>
-                    <TD>1</TD>
-                </TR>
-                <TR>
-                    <TD><B>concept:name</B></TD>
-                    <TD>6</TD>
-                    <TD>0</TD>
-                    <TD>Text</TD>
-                    <TD>False</TD>
-                    <TD>13</TD>
-                </TR>
-                <TR>
-                    <TD><B>EVENTID</B></TD>
-                    <TD>6</TD>
+                    <TD><B>Cible</B></TD>
+                    <TD>412</TD>
                     <TD>0</TD>
                     <TD>Numeric</TD>
                     <TD>False</TD>
                     <TD>N.A.</TD>
                 </TR>
                 <TR>
-                    <TD><B>lifecycle:transition</B></TD>
-                    <TD>2</TD>
+                    <TD><B>Mois</B></TD>
+                    <TD>48</TD>
                     <TD>0</TD>
                     <TD>Categorical</TD>
                     <TD>False</TD>
-                    <TD>2</TD>
+                    <TD>48</TD>
                 </TR>
                 <TR>
-                    <TD><B>org:resource</B></TD>
-                    <TD>1</TD>
-                    <TD>0</TD>
-                    <TD>Categorical</TD>
-                    <TD>False</TD>
-                    <TD>1</TD>
-                </TR>
-                <TR>
-                    <TD><B>RESOURCE</B></TD>
-                    <TD>1</TD>
-                    <TD>0</TD>
-                    <TD>Categorical</TD>
-                    <TD>False</TD>
-                    <TD>1</TD>
-                </TR>
-                <TR>
-                    <TD><B>ROUND</B></TD>
-                    <TD>1</TD>
-                    <TD>0</TD>
-                    <TD>Categorical</TD>
-                    <TD>False</TD>
-                    <TD>1</TD>
-                </TR>
-                <TR>
-                    <TD><B>STAGE</B></TD>
+                    <TD><B>Segment</B></TD>
                     <TD>3</TD>
                     <TD>0</TD>
                     <TD>Categorical</TD>
                     <TD>False</TD>
-                    <TD>7</TD>
+                    <TD>4</TD>
+                </TR>
+                
+                </tboby>
+            </TABLE>
+			<div class="text-end">
+                <button type="button" class="btn btn-secondary btn-sm" onclick="window.open('#home', '_self')">TOP</button>
+            </div>
+            <H2><a id="RespGeo" />File:&nbsp;<A href="RespGeo.html">RespGeo</A></H2>
+            <TABLE class="table .table-sm table-striped table-bordered">
+                <thead>
+                    <TR>
+                        <TH>Column Name</TH>
+                        <TH>Distinct Values</TH>
+                        <TH>Missing Values</TH>
+                        <TH>Type</TH>
+                        <TH>Is Unique</TH>
+                        <TH>Value Counts</TH>
+                    </TR>
+                </thead>
+                <tboby>
+                <TR>
+                    <TD><B>Responsable régional</B></TD>
+                    <TD>4</TD>
+                    <TD>0</TD>
+                    <TD>Text</TD>
+                    <TD>False</TD>
+                    <TD>4</TD>
                 </TR>
                 <TR>
-                    <TD><B>time:timestamp</B></TD>
-                    <TD>4</TD>
+                    <TD><B>Zone géographique</B></TD>
+                    <TD>3</TD>
+                    <TD>0</TD>
+                    <TD>Text</TD>
+                    <TD>False</TD>
+                    <TD>3</TD>
+                </TR>
+                
+                </tboby>
+            </TABLE>
+			<div class="text-end">
+                <button type="button" class="btn btn-secondary btn-sm" onclick="window.open('#home', '_self')">TOP</button>
+            </div>
+            <H2><a id="Resultats Ventes" />File:&nbsp;<A href="Resultats Ventes.html">Resultats Ventes</A></H2>
+            <TABLE class="table .table-sm table-striped table-bordered">
+                <thead>
+                    <TR>
+                        <TH>Column Name</TH>
+                        <TH>Distinct Values</TH>
+                        <TH>Missing Values</TH>
+                        <TH>Type</TH>
+                        <TH>Is Unique</TH>
+                        <TH>Value Counts</TH>
+                    </TR>
+                </thead>
+                <tboby>
+                <TR>
+                    <TD><B>Catégorie</B></TD>
+                    <TD>3</TD>
+                    <TD>0</TD>
+                    <TD>Categorical</TD>
+                    <TD>False</TD>
+                    <TD>6</TD>
+                </TR>
+                <TR>
+                    <TD><B>City</B></TD>
+                    <TD>1068</TD>
+                    <TD>0</TD>
+                    <TD>Text</TD>
+                    <TD>False</TD>
+                    <TD>1117</TD>
+                </TR>
+                <TR>
+                    <TD><B>Country</B></TD>
+                    <TD>15</TD>
+                    <TD>0</TD>
+                    <TD>Categorical</TD>
+                    <TD>False</TD>
+                    <TD>15</TD>
+                </TR>
+                <TR>
+                    <TD><B>Date d'expédition</B></TD>
+                    <TD>1346</TD>
                     <TD>0</TD>
                     <TD>DateTime</TD>
                     <TD>False</TD>
                     <TD>N.A.</TD>
                 </TR>
                 <TR>
-                    <TD><B>VIDEOEND</B></TD>
-                    <TD>6</TD>
+                    <TD><B>Date de commande</B></TD>
+                    <TD>1242</TD>
+                    <TD>0</TD>
+                    <TD>DateTime</TD>
+                    <TD>False</TD>
+                    <TD>N.A.</TD>
+                </TR>
+                <TR>
+                    <TD><B>ID client</B></TD>
+                    <TD>795</TD>
+                    <TD>0</TD>
+                    <TD>Text</TD>
+                    <TD>False</TD>
+                    <TD>795</TD>
+                </TR>
+                <TR>
+                    <TD><B>ID commande</B></TD>
+                    <TD>4593</TD>
+                    <TD>0</TD>
+                    <TD>Text</TD>
+                    <TD>False</TD>
+                    <TD>4593</TD>
+                </TR>
+                <TR>
+                    <TD><B>ID ligne</B></TD>
+                    <TD>10000</TD>
+                    <TD>0</TD>
+                    <TD>Numeric</TD>
+                    <TD>True</TD>
+                    <TD>N.A.</TD>
+                </TR>
+                <TR>
+                    <TD><B>ID produit</B></TD>
+                    <TD>1909</TD>
+                    <TD>0</TD>
+                    <TD>Text</TD>
+                    <TD>False</TD>
+                    <TD>1909</TD>
+                </TR>
+                <TR>
+                    <TD><B>Mode d'expédition</B></TD>
+                    <TD>4</TD>
+                    <TD>0</TD>
+                    <TD>Categorical</TD>
+                    <TD>False</TD>
+                    <TD>7</TD>
+                </TR>
+                <TR>
+                    <TD><B>Montant des ventes</B></TD>
+                    <TD>6097</TD>
                     <TD>0</TD>
                     <TD>Numeric</TD>
                     <TD>False</TD>
                     <TD>N.A.</TD>
                 </TR>
                 <TR>
-                    <TD><B>VIDEOSTART</B></TD>
-                    <TD>6</TD>
+                    <TD><B>Nom du client</B></TD>
+                    <TD>795</TD>
+                    <TD>0</TD>
+                    <TD>Text</TD>
+                    <TD>False</TD>
+                    <TD>927</TD>
+                </TR>
+                <TR>
+                    <TD><B>Nom du produit</B></TD>
+                    <TD>1858</TD>
+                    <TD>0</TD>
+                    <TD>Text</TD>
+                    <TD>False</TD>
+                    <TD>236</TD>
+                </TR>
+                <TR>
+                    <TD><B>Profit</B></TD>
+                    <TD>5176</TD>
                     <TD>0</TD>
                     <TD>Numeric</TD>
                     <TD>False</TD>
                     <TD>N.A.</TD>
+                </TR>
+                <TR>
+                    <TD><B>Quantité</B></TD>
+                    <TD>14</TD>
+                    <TD>0</TD>
+                    <TD>Numeric</TD>
+                    <TD>False</TD>
+                    <TD>N.A.</TD>
+                </TR>
+                <TR>
+                    <TD><B>Region</B></TD>
+                    <TD>128</TD>
+                    <TD>0</TD>
+                    <TD>Text</TD>
+                    <TD>False</TD>
+                    <TD>141</TD>
+                </TR>
+                <TR>
+                    <TD><B>Remise</B></TD>
+                    <TD>14</TD>
+                    <TD>0</TD>
+                    <TD>Numeric</TD>
+                    <TD>False</TD>
+                    <TD>N.A.</TD>
+                </TR>
+                <TR>
+                    <TD><B>Segment</B></TD>
+                    <TD>3</TD>
+                    <TD>0</TD>
+                    <TD>Categorical</TD>
+                    <TD>False</TD>
+                    <TD>4</TD>
+                </TR>
+                <TR>
+                    <TD><B>Sous-catégorie</B></TD>
+                    <TD>17</TD>
+                    <TD>0</TD>
+                    <TD>Categorical</TD>
+                    <TD>False</TD>
+                    <TD>19</TD>
+                </TR>
+                <TR>
+                    <TD><B>Zone géographique</B></TD>
+                    <TD>3</TD>
+                    <TD>0</TD>
+                    <TD>Categorical</TD>
+                    <TD>False</TD>
+                    <TD>3</TD>
                 </TR>
                 
                 </tboby>
@@ -196,7 +323,7 @@
 			<div class="text-end">
                 <button type="button" class="btn btn-secondary btn-sm" onclick="window.open('#home', '_self')">TOP</button>
             </div>
-            <H2><a id="test1" />File:&nbsp;<A href="test1.html">test1</A></H2>
+            <H2><a id="Ventes (tout)" />File:&nbsp;<A href="Ventes (tout).html">Ventes (tout)</A></H2>
             <TABLE class="table .table-sm table-striped table-bordered">
                 <thead>
                     <TR>
@@ -210,119 +337,175 @@
                 </thead>
                 <tboby>
                 <TR>
-                    <TD><B>ACTIVITY</B></TD>
-                    <TD>2</TD>
+                    <TD><B>Catégorie</B></TD>
+                    <TD>3</TD>
                     <TD>0</TD>
                     <TD>Categorical</TD>
                     <TD>False</TD>
                     <TD>6</TD>
                 </TR>
                 <TR>
-                    <TD><B>case:concept:name</B></TD>
-                    <TD>1</TD>
+                    <TD><B>Date d'expédition</B></TD>
+                    <TD>1346</TD>
+                    <TD>0</TD>
+                    <TD>DateTime</TD>
+                    <TD>False</TD>
+                    <TD>N.A.</TD>
+                </TR>
+                <TR>
+                    <TD><B>Date de commande</B></TD>
+                    <TD>1242</TD>
+                    <TD>0</TD>
+                    <TD>DateTime</TD>
+                    <TD>False</TD>
+                    <TD>N.A.</TD>
+                </TR>
+                <TR>
+                    <TD><B>Fournisseur</B></TD>
+                    <TD>74</TD>
+                    <TD>0</TD>
+                    <TD>Text</TD>
+                    <TD>False</TD>
+                    <TD>73</TD>
+                </TR>
+                <TR>
+                    <TD><B>ID</B></TD>
+                    <TD>10000</TD>
+                    <TD>0</TD>
+                    <TD>Numeric</TD>
+                    <TD>True</TD>
+                    <TD>N.A.</TD>
+                </TR>
+                <TR>
+                    <TD><B>ID client</B></TD>
+                    <TD>795</TD>
+                    <TD>0</TD>
+                    <TD>Text</TD>
+                    <TD>False</TD>
+                    <TD>795</TD>
+                </TR>
+                <TR>
+                    <TD><B>ID commande</B></TD>
+                    <TD>4593</TD>
+                    <TD>0</TD>
+                    <TD>Text</TD>
+                    <TD>False</TD>
+                    <TD>4593</TD>
+                </TR>
+                <TR>
+                    <TD><B>ID produit</B></TD>
+                    <TD>1909</TD>
+                    <TD>0</TD>
+                    <TD>Text</TD>
+                    <TD>False</TD>
+                    <TD>1909</TD>
+                </TR>
+                <TR>
+                    <TD><B>Mode d'expédition</B></TD>
+                    <TD>5</TD>
                     <TD>0</TD>
                     <TD>Categorical</TD>
                     <TD>False</TD>
-                    <TD>1</TD>
+                    <TD>8</TD>
                 </TR>
                 <TR>
-                    <TD><B>case:creator</B></TD>
-                    <TD>1</TD>
+                    <TD><B>Nom du client</B></TD>
+                    <TD>795</TD>
+                    <TD>0</TD>
+                    <TD>Text</TD>
+                    <TD>False</TD>
+                    <TD>927</TD>
+                </TR>
+                <TR>
+                    <TD><B>Nom du produit</B></TD>
+                    <TD>1858</TD>
+                    <TD>0</TD>
+                    <TD>Text</TD>
+                    <TD>False</TD>
+                    <TD>236</TD>
+                </TR>
+                <TR>
+                    <TD><B>Pays</B></TD>
+                    <TD>15</TD>
                     <TD>0</TD>
                     <TD>Categorical</TD>
                     <TD>False</TD>
-                    <TD>2</TD>
+                    <TD>15</TD>
                 </TR>
                 <TR>
-                    <TD><B>case:variant</B></TD>
-                    <TD>1</TD>
+                    <TD><B>Profit</B></TD>
+                    <TD>5176</TD>
                     <TD>0</TD>
-                    <TD>Categorical</TD>
+                    <TD>Numeric</TD>
                     <TD>False</TD>
-                    <TD>2</TD>
+                    <TD>N.A.</TD>
                 </TR>
                 <TR>
-                    <TD><B>case:variant-index</B></TD>
-                    <TD>1</TD>
+                    <TD><B>Quantité</B></TD>
+                    <TD>14</TD>
                     <TD>0</TD>
-                    <TD>Categorical</TD>
+                    <TD>Numeric</TD>
                     <TD>False</TD>
-                    <TD>1</TD>
+                    <TD>N.A.</TD>
                 </TR>
                 <TR>
-                    <TD><B>concept:name</B></TD>
-                    <TD>2</TD>
+                    <TD><B>Remise</B></TD>
+                    <TD>14</TD>
                     <TD>0</TD>
-                    <TD>Categorical</TD>
+                    <TD>Numeric</TD>
                     <TD>False</TD>
-                    <TD>6</TD>
+                    <TD>N.A.</TD>
                 </TR>
                 <TR>
-                    <TD><B>EVENTID</B></TD>
+                    <TD><B>Région</B></TD>
+                    <TD>127</TD>
+                    <TD>0</TD>
+                    <TD>Text</TD>
+                    <TD>False</TD>
+                    <TD>139</TD>
+                </TR>
+                <TR>
+                    <TD><B>Segment</B></TD>
                     <TD>3</TD>
-                    <TD>0</TD>
-                    <TD>Categorical</TD>
-                    <TD>False</TD>
-                    <TD>3</TD>
-                </TR>
-                <TR>
-                    <TD><B>lifecycle:transition</B></TD>
-                    <TD>2</TD>
-                    <TD>0</TD>
-                    <TD>Categorical</TD>
-                    <TD>False</TD>
-                    <TD>2</TD>
-                </TR>
-                <TR>
-                    <TD><B>org:resource</B></TD>
-                    <TD>1</TD>
-                    <TD>0</TD>
-                    <TD>Categorical</TD>
-                    <TD>False</TD>
-                    <TD>1</TD>
-                </TR>
-                <TR>
-                    <TD><B>RESOURCE</B></TD>
-                    <TD>1</TD>
-                    <TD>0</TD>
-                    <TD>Categorical</TD>
-                    <TD>False</TD>
-                    <TD>1</TD>
-                </TR>
-                <TR>
-                    <TD><B>ROUND</B></TD>
-                    <TD>1</TD>
-                    <TD>0</TD>
-                    <TD>Categorical</TD>
-                    <TD>False</TD>
-                    <TD>1</TD>
-                </TR>
-                <TR>
-                    <TD><B>STAGE</B></TD>
-                    <TD>1</TD>
                     <TD>0</TD>
                     <TD>Categorical</TD>
                     <TD>False</TD>
                     <TD>4</TD>
                 </TR>
                 <TR>
-                    <TD><B>time:timestamp</B></TD>
-                    <TD>2</TD>
+                    <TD><B>Sous-catégorie</B></TD>
+                    <TD>17</TD>
+                    <TD>0</TD>
+                    <TD>Categorical</TD>
+                    <TD>False</TD>
+                    <TD>19</TD>
+                </TR>
+                <TR>
+                    <TD><B>Taux de remise</B></TD>
+                    <TD>3</TD>
                     <TD>0</TD>
                     <TD>Categorical</TD>
                     <TD>False</TD>
                     <TD>3</TD>
                 </TR>
                 <TR>
-                    <TD><B>VIDEOEND</B></TD>
-                    <TD>3</TD>
+                    <TD><B>Vente</B></TD>
+                    <TD>6097</TD>
                     <TD>0</TD>
-                    <TD>Categorical</TD>
+                    <TD>Numeric</TD>
                     <TD>False</TD>
-                    <TD>3</TD>
+                    <TD>N.A.</TD>
                 </TR>
                 <TR>
-                    <TD><B>VIDEOSTART</B></TD>
+                    <TD><B>Ville</B></TD>
+                    <TD>1068</TD>
+                    <TD>0</TD>
+                    <TD>Text</TD>
+                    <TD>False</TD>
+                    <TD>1117</TD>
+                </TR>
+                <TR>
+                    <TD><B>Zone géographique</B></TD>
                     <TD>3</TD>
                     <TD>0</TD>
                     <TD>Categorical</TD>
