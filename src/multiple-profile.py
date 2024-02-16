@@ -10,9 +10,10 @@ from jinja2 import Template
 import pathlib
 import shutil
 import json
+import importlib.resources
 
-TEMPLATEDIR = "./templates/"
-STATICDIR = "./statics/"
+TEMPLATEDIR = "./src/templates/"
+STATICDIR = "./src/statics/"
 SIMPLEPROF_TEMPLATEDIR = "./simple/"
 COMPLETE_MENU = "menu.html"
 COMPLETE_INDEX = "index.html"
@@ -70,6 +71,19 @@ class Options:
 	def destination(self): 
 		return self.__destimation__ if len(self.__destimation__)>0 else self.directory
 
+def getResourceFile(package, file) -> str:
+	""" returns the filename needed to access to the data resource file stored in a package
+	Args:
+		package (str): package name in the project
+		file (str): name of the resource file (without path)
+	Returns:
+		str: real path and file name for accessing the data resource 
+	"""
+	try:
+		return str(importlib.resources.files(package).joinpath(file))
+	except Exception as e:
+		return ""
+		
 def getCLIArguments():
 	""" Checks & Gather the command line parameters
 	Returns:
@@ -171,6 +185,7 @@ def prepareHTML(options):
 		pass
 
 if __name__ == "__main__":
+	test = getResourceFile("templates", "home.html" )
 	# get the options from the CLI
 	options = getCLIArguments()
 	# List all the fils in the source directory
